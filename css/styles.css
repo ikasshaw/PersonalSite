@@ -161,45 +161,54 @@ footer a img {
 	border-radius: 5px;
 }
 
-/************************               Review page styles                **************************/
+/************************               Contact page styles                **************************/
 
-.review-container {
-	margin: 0 auto;
+.contact-methods {
+
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
-	padding: 15px;
-}
-
-.review {
-	display: flex;
-	color: #e6e8e6;
-	flex-direction: column;
-	align-items: flex-start;
-	padding: 8px;
-	width: 100%;
-}
-
-.reviewer-name {
-	width: 100%;
 	height: 100%;
-	margin: 0;
-	background-color: #3772ff;
-	padding: 7px;
-	font-size: 18px;
-	justify-content: left;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
+	align-content: center;
+	justify-content: center;
 }
 
-.review-body {
+.prefmethod {
+
+	display: flex;
+	margin-top: 30%;
+	align-content: space-around;
+	text-align: center;
+}
+
+.prefmethod a {
+
+	text-decoration: none;
+	color: #58A4B0;
+}
+
+.methods {
+
+	display: flex;
+	flex-direction: row;
 	width: 100%;
-	padding: 15px;
-	background-color: #df2935;
-	color: #e6e8e6;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+	padding: 20px;
+	align-content: center;
+	justify-content: center;
+	background-color: #E6E8E6;
+
+}
+
+.methods a {
+
+	align-self: center;
+	justify-self: center;
+}
+
+.methods img{
+
+	max-width: 60px;
+	align-content: center;
+	justify-content: center;
 }
 
 /************************               About page styles                **************************/
@@ -207,7 +216,9 @@ footer a img {
 .about-container {
 	display: flex;
 	flex-direction: column;
+	width: 65%;
 	justify-content: center;
+	align-self: center;
 	align-items: center;
 	padding: 10px;
 }
