@@ -18,21 +18,26 @@
 body {
 	display: flex;
 	flex-direction: column;
+	background-image: linear-gradient(to bottom, #102E4A , #071013 25%,#102E4A 75%);
+	/* background-image: linear-gradient(to bottom right, #102E4A, #071013); */
+	background-repeat:repeat-y;
+	background-size: contain;
 	height: 100vh;
 	font-family: "Montserrat","Open Sans", "Roboto", "Helvetica Neue", sans-serif;
 	font-size: 16px;
-	background-image: linear-gradient(to bottom right, #102E4A, #071013);
-	background-color: #102e4a;
-	background-size: cover;
-	background-repeat: no-repeat;
+	/* background-color: #102e4a; */
 	color: #e6e8e6;
 }
 
 h1 {
 	display: flex;
+	width: 65%;
 	justify-content: center;
+	align-self: center;
+	border-bottom: 2px solid #E6E8E6;
+	font-size: 2.5em;
 	padding-top: 10px;
-	color: #080708;
+	padding-bottom: ;
 }
 
 body > footer {
@@ -123,21 +128,37 @@ footer a img {
 
 /************************               Portfolio page styles                **************************/
 
-.portfolio-pics {
-	display: grid;
-	grid-template: auto auto auto auto auto / 1fr;
-	grid-column-gap: 10px;
-	grid-row-gap: 10px;
+.projects {
+
+	display: flex;
+	flex-direction: column;
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
 	padding: 10px;
 	margin: 0 auto;
 	justify-content: center;
+	align-items: center;
+}
+
+.project-title {
+
+	font-size: 1.5em;
+
+}
+
+.project-description {
+
+	color: #acacac;
 }
 
 .image {
+	
 	width: 100%;
 	max-width: 390;
-	height: 360px;
-	object-fit: cover;
+	border-radius: 5px;
 }
 
 /************************               Review page styles                **************************/
@@ -222,17 +243,21 @@ footer a img {
 		width: 75%;
 	}
 
-	/* .home-chunk p {
-		position: relative;
-		width: 25%;
-		justify-content: center;
-		padding: 10px;
-		font-size: 32px;
-	} */
 
 	.about-container img {
 		max-height: 360px;
 		max-width: 360px;
+	}
+
+	.project {
+
+		width: 65%;
+
+	}
+
+	.image {
+			height: 360px;
+			object-fit: contain;
 	}
 }
 
@@ -259,17 +284,20 @@ footer a img {
 		width: 75%;
 	}
 
-	/* .home-chunk p {
-		position: relative;
-		width: 25%;
-		justify-content: center;
-		padding: 10px;
-		font-size: 32px;
-	} */
-
 	.about-container img {
 		max-height: 360px;
 		max-width: 360px;
+	}
+
+	.project {
+
+		width: 65%;
+
+	}
+
+	.image {
+			height: 360px;
+			object-fit: contain;
 	}
 }
 
