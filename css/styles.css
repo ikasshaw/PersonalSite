@@ -178,6 +178,8 @@ footer a img {
 	margin-top: 30%;
 	align-content: space-around;
 	text-align: center;
+	justify-content: center;
+	align-content: center;
 }
 
 .prefmethod a {
@@ -232,14 +234,6 @@ footer a img {
 /************************               Media Queries                **************************/
 
 @media (min-width: 768px) {
-	.portfolio-pics {
-		max-width: 720px;
-		grid-template: auto auto auto auto auto / 1fr 1fr;
-	}
-
-	.review {
-		max-width: 720px;
-	}
 
 	.home-chunk {
 		display: flex;
@@ -273,14 +267,6 @@ footer a img {
 }
 
 @media (min-width: 1140px) {
-	.portfolio-pics {
-		max-width: 1080px;
-		grid-template: auto auto auto auto auto / 1fr 1fr 1fr;
-	}
-
-	.review {
-		max-width: 1080px;
-	}
 
 	.home-chunk {
 		display: flex;
