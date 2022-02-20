@@ -18,36 +18,47 @@
 body {
 	display: flex;
 	flex-direction: column;
-	background-image: linear-gradient(to bottom, #102E4A , #071013 25%,#102E4A 75%);
-	/* background-image: linear-gradient(to bottom right, #102E4A, #071013); */
-	background-repeat:repeat-y;
+	background-image: linear-gradient(
+		to bottom,
+		#102e4a,
+		#071013 25%,
+		#102e4a 90%
+	);
+	background-repeat: repeat-y;
 	background-size: contain;
 	height: 100vh;
-	font-family: "Montserrat","Open Sans", "Roboto", "Helvetica Neue", sans-serif;
+	font-family: "Montserrat", "Open Sans", "Roboto", "Helvetica Neue", sans-serif;
 	font-size: 16px;
-	/* background-color: #102e4a; */
 	color: #e6e8e6;
+	align-items: center;
+	justify-content: center;
 }
 
-h1 {
+h2 {
 	display: flex;
 	width: 65%;
 	justify-content: center;
+	align-content: center;
+	text-align: center;
+	justify-self: center;
 	align-self: center;
-	border-bottom: 2px solid #E6E8E6;
+	border-bottom: 2px solid #e6e8e6;
 	font-size: 2.5em;
 	padding-top: 10px;
-	padding-bottom: ;
+}
+
+hr {
+	width: 65%;
 }
 
 body > footer {
-
 	position: sticky;
 	top: 100vh;
 }
 
 footer {
 	background-color: #071013;
+	width: 100vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -66,7 +77,10 @@ footer a img {
 
 .bg-dark,
 .nav-link,
-.navbar-brand {
+.navbar-brand,
+.dropdown,
+.dropdown-menu,
+.dropdown-item {
 	font-family: "Open Sans", "Roboto", "Helvetica Neue", sans-serif !important;
 	background-color: #071013 !important;
 	color: #e6e8e6 !important;
@@ -78,6 +92,18 @@ footer a img {
 
 .navbar-collapse {
 	margin-top: 5px;
+}
+
+.navbar {
+	/* position: fixed; */
+	top: 0;
+	width: 100%;
+}
+
+.specialnavlocation {
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 /************************               Home page styles                **************************/
@@ -102,7 +128,6 @@ footer a img {
 
 .home-chunk img {
 	width: 100%;
-	
 }
 
 .Title-name {
@@ -129,9 +154,7 @@ footer a img {
 /************************               Portfolio page styles                **************************/
 
 .projects {
-
-	display: flex;
-	flex-direction: column;
+	overflow: auto;
 }
 
 .project {
@@ -149,22 +172,102 @@ footer a img {
 }
 
 .project-description {
-
 	padding-top: 20px;
 	color: #acacac;
 }
 
 .image {
-	
 	width: 100%;
 	max-width: 390;
 	border-radius: 5px;
 }
 
+/************************               Stocks page styles                **************************/
+
+.chart {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	justify-self: center;
+	align-self: center;
+	position: relative;
+	width: 85vw;
+}
+
+.tickerForm,
+.assetChoice {
+	display: flex;
+	align-self: center;
+	justify-self: center;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	height: 6vh;
+	padding: 11px;
+}
+
+.tickerForm {
+	margin-bottom: 10vh;
+}
+
+label {
+	padding-right: 10px;
+}
+
+select {
+	background-color: #79797944;
+	color: #e6e8e6;
+	border-color: #79797944;
+	width: 30vw;
+	text-align: center;
+	border-radius: 5px;
+}
+
+#tickerInput {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.125em;
+	border: 1.5px solid #292f36;
+	border-right: none;
+	height: 3vh;
+	width: 100%;
+	text-indent: 7px;
+	background-color: #79797944;
+	color: #e6e8e6;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+::placeholder {
+	color: #e6e8e6;
+}
+
+#tickerSubmit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 6%;
+	border: 1.5px solid #292f36;
+	border-left: none;
+	cursor: pointer;
+	background-color: #79797944;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 15px;
+	padding-right: none;
+	padding-left: none;
+	height: 3vh;
+}
+
+#tickerSubmit img {
+	height: 40px;
+	object-fit: cover;
+	padding: 10px;
+}
+
 /************************               Contact page styles                **************************/
 
 .contact-methods {
-
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -173,7 +276,6 @@ footer a img {
 }
 
 .prefmethod {
-
 	display: flex;
 	margin-top: 30%;
 	text-align: center;
@@ -182,31 +284,26 @@ footer a img {
 }
 
 .prefmethod a {
-
 	text-decoration: none;
-	color: #58A4B0;
+	color: #58a4b0;
 }
 
 .methods {
-
 	display: flex;
 	flex-direction: row;
 	width: 100%;
 	padding: 20px;
 	align-content: center;
 	justify-content: center;
-	background-color: #E6E8E6;
-
+	background-color: #e6e8e6;
 }
 
 .methods a {
-
 	align-self: center;
 	justify-self: center;
 }
 
-.methods img{
-
+.methods img {
 	max-width: 60px;
 	align-content: center;
 	justify-content: center;
@@ -218,6 +315,7 @@ footer a img {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	height: auto;
 	justify-content: center;
 	align-self: center;
 	align-items: center;
@@ -225,7 +323,6 @@ footer a img {
 }
 
 .about-container p {
-
 	padding-top: 20px;
 	width: 100%;
 }
@@ -236,10 +333,13 @@ footer a img {
 	max-width: 360px;
 }
 
+.customheader {
+	margin-top: 7vh;
+}
+
 /************************               Media Queries                **************************/
 
 @media (min-width: 768px) {
-
 	.home-chunk {
 		display: flex;
 		color: #e6e8e6;
@@ -253,60 +353,91 @@ footer a img {
 		width: 75%;
 	}
 
-
 	.about-container img {
 		max-height: 360px;
 		max-width: 360px;
 	}
 
 	.project {
-
 		width: 65%;
 	}
 
 	.image {
-			height: 360px;
-			object-fit: contain;
+		height: 360px;
+		object-fit: contain;
 	}
 
 	.prefmethod {
-
 		margin-top: 10%;
-
 	}
-}
 
-@media (min-width: 1140px) {
+	.methods {
+		width: 100vw;
+	}
 
-	.home-chunk {
+	.tickerForm,
+	.assetChoice {
 		display: flex;
-		color: #e6e8e6;
-		align-items: center;
+		align-self: center;
 		justify-content: center;
-		object-fit: cover;
-		padding: 5px;
+		align-items: center;
+		width: 90%;
+		height: 10vh;
+		padding: 10px;
+		margin-bottom: 3px;
 	}
 
-	.home-chunk img {
-		width: 75%;
+	.tickerInput {
+		width: 100%;
+	}
+	
+
+	select {
+		width: 12vw;
 	}
 
-	.about-container img {
-		max-height: 360px;
-		max-width: 360px;
+	.chart {
+		margin-top: 60px;
+		width: 50vw;
+		height: 40vh;
 	}
 
-	.project {
-
-		width: 65%;
-
-	}
-
-	.image {
-			height: 360px;
-			object-fit: contain;
+	#stockChart {
+		position: relative;
+		width: 70vh !important;
+		height: 45vh !important;
 	}
 }
+
+/* @media (min-width: 1140px) {
+	.tickerForm,
+	.assetChoice {
+		width: 90%;
+		height: 10vh;
+		padding: 10px;
+		margin-bottom: 6px;
+	}
+
+	#tickerInput {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		font-size: 1.125em;
+		border: 1.5px solid #292f36;
+		border-right: none;
+		height: 3vh;
+		width: 100%;
+		text-indent: 7px;
+		background-color: #79797944;
+		color: #e6e8e6;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+
+	#tickerSubmit {
+		
+		height: 3vh;
+	}
+} */
 
 /* 
 #3772FF  blue
