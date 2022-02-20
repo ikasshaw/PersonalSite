@@ -4,55 +4,49 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Isaac Shaw - Personal Website</title>
+		<title>Isaac Shaw - Stock Chart</title>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 			crossorigin="anonymous"
 		/>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-			crossorigin="anonymous"
-		></script>
 		<link rel="stylesheet" href="/css/styles.css" />
 	</head>
 
 	<body>
-
 		<nav
-			class="navbar navbar-expand-lg navbar-dark bg-dark specialnavlocation"
+			class="navbar navbar-expand-lg navbar-dark bg-dark"
 			id="myNavBar"
 		></nav>
 
-		<div class="assetChoice">
-			<label for="asset-selector">Asset type:	</label>
-			<select name="assets" id="asset-selector">
-				<option value="stocks">Stocks</option>
-				<option value="crypto">Crypto</option>
-			</select>
-		</div>
-
-
-		<form autocomplete = "off" class="tickerForm">
-			<div class="autocomplete">
-				<input
-					autocomplete="off"
-					id="tickerInput"
-					type="text"
-					placeholder="Enter a ticker"
-				/>
+		<div class="project">
+			<div class="assetChoice">
+				<label for="asset-selector">Asset type: </label>
+				<select name="assets" id="asset-selector">
+					<option value="stocks">Stocks</option>
+					<option value="crypto">Crypto</option>
+				</select>
 			</div>
-			<button id="tickerSubmit" type="submit">
-				<img src="/images/search_Icon.png" />
-			</button>
-		</form>
 
-		<div class="chart">
-			<canvas id="stockChart"></canvas>
+			<form autocomplete="off" class="tickerForm">
+				<div class="autocomplete">
+					<input
+						autocomplete="off"
+						id="tickerInput"
+						type="text"
+						placeholder="Enter a ticker"
+					/>
+				</div>
+				<button id="tickerSubmit" type="submit">
+					<img src="/images/search_Icon.png" />
+				</button>
+			</form>
+
+			<div class="chart">
+				<canvas id="stockChart"></canvas>
+			</div>
 		</div>
-
 		<footer>
 			<a target="_blank" href="https://github.com/ikasshaw/PersonalSite.git"
 				><img src="/images/GitHub-Mark-Light-64px.png" alt="Github icon"
@@ -69,7 +63,7 @@
 			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
 			crossorigin="anonymous"
 		></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+		
 		<script
 			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
@@ -80,6 +74,7 @@
 			integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ="
 			crossorigin="anonymous"
 		></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 		<script text="type/javascript" src="/script.js"></script>
 	</body>
 </html>

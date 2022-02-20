@@ -6,7 +6,7 @@ let chartLabel = "";
 let assetType = "";
 let ticker = "";
 
-navBar.innerHTML = `<div class=\"container-fluid\">
+navBar.innerHTML = `<div class="container-fluid">
 <a class="navbar-brand" href="../../index.html">Isaac Shaw</a>
 <button
     class="navbar-toggler"
@@ -54,6 +54,10 @@ navBar.innerHTML = `<div class=\"container-fluid\">
     </ul>
 </div>
 </div>`;
+
+try {
+	myChart.destroy();
+} catch (error) {}
 
 document
 	.getElementById("tickerSubmit")
@@ -141,6 +145,8 @@ function getData(value) {
 
 const ctx = document.getElementById("stockChart").getContext("2d");
 
+Chart.defaults.size = 30;
+
 function updateChart(price, labe) {
 	const myChart = new Chart(ctx, {
 		type: "line",
@@ -165,8 +171,8 @@ function updateChart(price, labe) {
 			title: {
 				display: true,
 				text: chartLabel,
-				color: "rgba(",
 			},
+
 			aspectRatio: 1.5,
 			legend: {
 				display: false,
