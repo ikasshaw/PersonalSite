@@ -55,10 +55,6 @@ navBar.innerHTML = `<div class="container-fluid">
 </div>
 </div>`;
 
-try {
-	myChart.destroy();
-} catch (error) {}
-
 document
 	.getElementById("tickerSubmit")
 	.addEventListener("click", function (event) {
@@ -83,9 +79,6 @@ document
 	});
 
 function getData(value) {
-	try {
-		myChart.destroy();
-	} catch (error) {}
 	prices = [];
 	labels = [];
 	assetType = document.getElementById("asset-selector").value;
@@ -108,9 +101,10 @@ function getData(value) {
 				let responseData = json["Time Series (1min)"];
 				let keys = Object.keys(responseData);
 
-				for (let i = 0; i < keys.length; ++i) {
+				for (let i = (keys.length - 1); i >= 0 ; --i) {
 					prices.push(responseData[keys[i]]["4. close"]);
-					labels.push(moment(keys[i]).format("h:mm a"));
+					let time = moment.utc(keys[i]).add(5, 'hours');
+					labels.push(time.local().format("MMMM Do YYYY, h:mm a"));
 				}
 
 				updateChart(prices, labels);
@@ -132,10 +126,9 @@ function getData(value) {
 					json["Meta Data"]["3. Digital Currency Name"] + " Token Price";
 				let responseData = json["Time Series Crypto (1min)"];
 				let keys = Object.keys(responseData);
-
-				for (let i = 0; i < keys.length; ++i) {
+				for (let i = (keys.length - 1); i >= 0 ; --i) {
 					prices.push(responseData[keys[i]]["4. close"]);
-					labels.push(moment(keys[i]).format("h:mm a"));
+					labels.push(moment.utc(keys[i]).local().format("MMMM Do YYYY, h:mm a"));
 				}
 
 				updateChart(prices, labels);
@@ -144,11 +137,12 @@ function getData(value) {
 }
 
 const ctx = document.getElementById("stockChart").getContext("2d");
-
+let myChart = new Chart(ctx);
 Chart.defaults.size = 30;
 
 function updateChart(price, labe) {
-	const myChart = new Chart(ctx, {
+	myChart.destroy();
+	myChart = new Chart(ctx, {
 		type: "line",
 
 		data: {
